@@ -19,7 +19,7 @@ uint64_t get_now_ms() {
 int main ()
 {
 
-	Audio::Sample *asample;
+  Audio::Sample *asample;
   asample = new Audio::Sample();
   asample->load("assets/blip.dat");
 
@@ -29,10 +29,10 @@ int main ()
 
   bool firstPlay = true;
 
-	Corpo *c1 = new Corpo(10, 0, 0, 100.0, 3.0);
-	Corpo *c2 = new Corpo(10, 0, 0, 100.0, 1.5);
-	Corpo *c3 = new Corpo(10, 0, 0, 200.0, 0.5);
-	Corpo *c4 = new Corpo(10, 0, 0, 200.0, 1.5);
+  Corpo *c1 = new Corpo(10, 0, 0, 100.0, 3.0);
+  Corpo *c2 = new Corpo(10, 0, 0, 100.0, 1.5);
+  Corpo *c3 = new Corpo(10, 0, 0, 200.0, 0.5);
+  Corpo *c4 = new Corpo(10, 0, 0, 200.0, 1.5);
 
   ListaDeCorpos *l = new ListaDeCorpos();
   l->add_corpo(c1);
@@ -74,7 +74,8 @@ int main ()
     char c = teclado->getchar();
 
     if (c == 'w') {
-    		if(firstPlay){
+        
+		if (firstPlay) {
   			player->play(asample);
   			firstPlay = false;
   		} else {
@@ -85,7 +86,7 @@ int main ()
     }
     else if (c == 's') {
 
-    		if(firstPlay){
+    	if (firstPlay) {
   			player->play(asample);
   			firstPlay = false;
   		} else {

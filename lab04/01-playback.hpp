@@ -1,3 +1,8 @@
+/*
+ *  Rodrigo Oliveira Caus - 186807
+ *  Victor Ferrão Santolim - 187888
+ */
+
 #ifndef PLAYBACK_HPP
 #define PLAYBACK_HPP
 
@@ -47,4 +52,3 @@ class Player {
 
 }
 #endif
-

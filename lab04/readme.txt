@@ -1,13 +1,12 @@
 Rodrigo Caus (186807) e Victor Santolim (187888)
-Lab 3 - ncurses2
+Lab 4 - portaudio
 
-Mudanças do lab 3:
+Mudanças do lab 4:
 
-	Portamos as mudanças feitas no lab 2 para o código disponibilizado do lab 3.
-	Modificamos a função choque em oo_model.cpp para receber um char de parâmetro, 
-	'u' ou 'd', que indica qual direção será incrementada a velocidade, ou seja 
-	direção do impulso. Nessa função, a velocidade agora é velocidade mais ou menos
-	uma constante, dependendo do parâmetro. Em model_mainloop.cpp, modificamos o
-	modo como é tratada a leitura do caractere, para selecionar o parâmetro de
-	chamada da funçõo choque. Também nesse arquivo, removemos o critério de parada
-	por tempo de simulação.
+	Foram adicionados em relação ao lab 3 os arquivos 01-playback para gerenciamento
+	de áudio. As alterações feitas em 01-playback são apenas no tamanho do buffer. No
+	model_mainloop, foram adicionados os objetos Audio::Sample e Audio::Player para
+	abrir o arquivo de áudio. Toda vez que detectada uma tecla 'w' ou 's', é emitido
+	um som (dando um player, quando essas teclas são tocadas pela primeira vez ou
+	voltando o cursor de áudio para 0 com asample->set_position(0)). Por fim, fechamos
+	o canal de áudio com o player->stop().

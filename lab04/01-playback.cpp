@@ -1,3 +1,7 @@
+/*
+ *  Rodrigo Oliveira Caus - 186807
+ *  Victor Ferrão Santolim - 187888
+ */
 
 #include <iostream>
 #include <fstream>
@@ -133,7 +137,7 @@ void Player::init() {
                          NULL,      /* No input. */
                          &outputParameters,
                          44100,
-                         256,       /* Frames per buffer. */
+                         512,       /* Frames per buffer. */
                          paClipOff, /* We won't output out of range samples so don't bother clipping them. */
                          mix_and_play,
                          this );
@@ -169,7 +173,3 @@ void Player::stop() {
   Pa_Terminate();
 
 }
-
-
-
-
