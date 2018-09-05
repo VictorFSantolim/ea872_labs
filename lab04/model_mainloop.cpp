@@ -57,7 +57,7 @@ int main ()
 
   T = get_now_ms();
   t1 = T;
-  
+
   while (1) {
     // Atualiza timers
     t0 = t1;
@@ -72,18 +72,25 @@ int main ()
 
     // Lê o teclado
     char c = teclado->getchar();
-    if(firstPlay){
+
+    if (c == 'w') {
+    		if(firstPlay){
   			player->play(asample);
+  			firstPlay = false;
   		} else {
   			asample->set_position(0);
   		}
 
-    if (c == 'w') {
-
-
         f->choque('u');
     }
     else if (c == 's') {
+
+    		if(firstPlay){
+  			player->play(asample);
+  			firstPlay = false;
+  		} else {
+  			asample->set_position(0);
+  		}
         f->choque('d');
     }
     if (c == 'q') {
