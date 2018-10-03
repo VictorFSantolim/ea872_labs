@@ -26,8 +26,7 @@ int main ()
   Audio::Player *player;
   player = new Audio::Player();
   player->init();
-
-  bool firstPlay = true;
+  std::cout << "Pos inicial " << asample->get_position() << std::endl;
 
   Corpo *c1 = new Corpo(10, 0, 0, 100.0, 3.0);
   Corpo *c2 = new Corpo(10, 0, 0, 100.0, 1.5);
@@ -74,32 +73,29 @@ int main ()
     char c = teclado->getchar();
 
     if (c == 'w') {
-        
-		if (firstPlay) {
-  			player->play(asample);
-  			firstPlay = false;
-  		} else {
-  			asample->set_position(0);
-  		}
 
-        f->choque('u');
+
+      asample->set_position(0);
+			player->play(asample);
+
+      f->choque('u');
     }
     else if (c == 's') {
 
-    	if (firstPlay) {
-  			player->play(asample);
-  			firstPlay = false;
-  		} else {
-  			asample->set_position(0);
-  		}
-        f->choque('d');
+    	asample->set_position(0);
+      player->play(asample);
+        
+      f->choque('d');
     }
-    if (c == 'q') {
+    else if (c == 'q') {
       break;
     }
+    else{
+     // player->pause();
+    }
 
 
-    std::this_thread::sleep_for (std::chrono::milliseconds(30));
+    //std::this_thread::sleep_for (std::chrono::milliseconds(30));
     i++;
   }
 

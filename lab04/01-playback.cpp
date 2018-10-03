@@ -26,6 +26,7 @@ bool Sample::finished() {
   else return false;
 }
 
+
 void Sample::load(const char *filename) {
   std::string buffer;
   float fdata;
