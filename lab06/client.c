@@ -38,11 +38,10 @@ int main() {
   /* Agora, meu socket funciona como um descritor de arquivo usual */
   while(enviar != 'q')
   {
-    enviar = getchar();
+    enviar = getch();
     if(enviar != ERR) send(socket_fd, &enviar, 1, 0);
   }
 
   close(socket_fd);
   return 0;
 }
-
