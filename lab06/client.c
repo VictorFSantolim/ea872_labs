@@ -9,13 +9,6 @@
 
 int main() {
 
-  //Configurando ncurses
-  raw();
-  keypad(stdscr, TRUE);
-  noecho();
-  curs_set(0);
-
-
   int socket_fd;
   struct sockaddr_in target;
 
@@ -34,6 +27,11 @@ int main() {
 
   char enviar = 0;
 
+  initscr();			       /* Start curses mode 		*/
+  raw();				         /* Line buffering disabled	*/
+  keypad(stdscr, TRUE);	 /* We get F1, F2 etc..		*/
+  noecho();			         /* Don't echo() while we do getch */
+  curs_set(0);           /* Do not display cursor */
 
   /* Agora, meu socket funciona como um descritor de arquivo usual */
   while(enviar != 'q')
@@ -42,6 +40,8 @@ int main() {
     if(enviar != ERR) send(socket_fd, &enviar, 1, 0);
   }
 
+
   close(socket_fd);
+  endwin();
   return 0;
 }

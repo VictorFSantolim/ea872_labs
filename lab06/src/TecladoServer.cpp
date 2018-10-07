@@ -9,10 +9,10 @@
 //Função que roda em thread verificando input de teclado do computador remoto
 void threadFunctionServer(char *keybuffer, int *control,  int *socket_fd,  int *connection_fd, struct sockaddr_in *client, socklen_t client_size)
 {
-  char c;
+  char c = 0;
   //printf("Vou travar ate receber alguma coisa pela primeira vez\n");
   *connection_fd = accept(*socket_fd, (struct sockaddr*)client, &client_size);
-  
+
   while ((*control) == 1) {
     //printf("Recebi uma mensagem:\n");
     recv(*connection_fd, &c, 1, 0);
