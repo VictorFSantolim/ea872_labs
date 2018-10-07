@@ -1,0 +1,7 @@
+ALSA lib setup.c:547:(add_elem) Cannot obtain info for CTL elem (MIXER,'AC97 2ch->4ch Copy Switch',0,0,0): No such file or directory
+ALSA lib setup.c:547:(add_elem) Cannot obtain info for CTL elem (PCM,'IEC958 Playback PCM Stream',0,0,0): No such file or directory
+ALSA lib setup.c:547:(add_elem) Cannot obtain info for CTL elem (PCM,'IEC958 Playback PCM Stream',0,0,0): No such file or directory
+ALSA lib setup.c:547:(add_elem) Cannot obtain info for CTL elem (PCM,'IEC958 Playback PCM Stream',0,0,0): No such file or directory
+ALSA lib pcm.c:8306:(snd_pcm_recover) underrun occurred
+ALSA lib pcm.c:8306:(snd_pcm_recover) underrun occurred
+ALSA lib pcm.c:8306:(snd_pcm_recover) underrun occurred
