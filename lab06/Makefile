@@ -13,5 +13,15 @@ $(EXE): $(SRC) $(HPP)
 play: $(EXE)
 	./$(EXE) 2>warning.log
 
-clear: $(EXE)
-	rm $(EXE)
+clear:
+	rm -f $(EXE)
+	rm -f client
+	rm -f warning.log
+
+client: client.c
+	gcc client.c -o client -lncurses
+
+runclient: client
+	./client
+
+

@@ -16,7 +16,7 @@ void threadFunctionServer(char *keybuffer, int *control,  int *socket_fd,  int *
   while ((*control) == 1) {
     //printf("Recebi uma mensagem:\n");
     recv(*connection_fd, &c, 1, 0);
-
+    
     (*keybuffer) = c;
     std::this_thread::sleep_for (std::chrono::milliseconds(10));
   }

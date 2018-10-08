@@ -37,7 +37,8 @@ int main() {
   while(enviar != 'q')
   {
     enviar = getch();
-    if(enviar != ERR) send(socket_fd, &enviar, 1, 0);
+    if(enviar != ERR) {send(socket_fd, &enviar, 1, 0); printf("Enviando o comando: '%c'\n", enviar);}
+
   }
 
 
